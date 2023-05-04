@@ -1,0 +1,36 @@
+public abstract class Transport implements NeedService{
+    public String modelName;
+    public int wheelsCount;
+
+    public Transport(String modelName, int wheelsCount) {
+        this.modelName = modelName;
+        this.wheelsCount = wheelsCount;
+    }
+    @Override
+    public void service() {
+        System.out.println("Обслуживаем - " + modelName);
+        for (int i = 0; i < getWheelsCount(); i++) {
+            updateTyre();
+        }
+    }
+    public void updateTyre() {
+        System.out.println("Меняем покрышку");
+    }
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public int getWheelsCount() {
+        return wheelsCount;
+    }
+
+    public void setWheelsCount(int wheelsCount) {
+        this.wheelsCount = wheelsCount;
+    }
+
+
+}
